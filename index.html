@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -13,6 +13,7 @@
   <meta property="og:url" content="https://navixaeducation.com/" />
   <link rel="canonical" href="https://navixaeducation.com/" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -55,23 +56,131 @@
     </div>
   </header>
 
-  <!-- ===== HERO SECTION ===== -->
-  <section class="hero" id="home" aria-label="Hero banner">
-    <div class="hero-bg">
-      <div class="hero-overlay"></div>
-      <img src="images/hero-bg.jpg" alt="Students studying abroad in Europe" class="hero-img" loading="eager" />
-    </div>
-    <div class="container hero-content">
-      <div class="hero-badge animate-fade-up">
-        <span>🌍 Sri Lanka's #1 European Study Abroad Specialists</span>
+  <!-- ===== HERO SECTION — Rotating Slider ===== -->
+  <section class="hero hero-slider" id="home" aria-label="Hero banner">
+
+    <!-- Slide Backgrounds (Ken Burns) -->
+    <div class="hs-slides" id="hs-slides" aria-hidden="true">
+      <div class="hs-slide active" data-index="0" style="--overlay:linear-gradient(135deg,rgba(10,25,70,.88) 0%,rgba(14,165,233,.55) 100%)">
+        <div class="hs-bg" style="background-image:url('images/hero-bg.jpg')"></div>
+        <div class="hs-overlay"></div>
       </div>
-      <h1 class="hero-title animate-fade-up delay-1">
-        Study in <span class="text-gradient">Germany & Europe</span><br />from Sri Lanka
-      </h1>
-      <p class="hero-subtitle animate-fade-up delay-2">
-        Affordable education, expert visa guidance, and complete support — from application to arrival. Trusted by 150+ successful students.
-      </p>
-      <div class="hero-actions animate-fade-up delay-3">
+      <div class="hs-slide" data-index="1" style="--overlay:linear-gradient(135deg,rgba(15,50,30,.88) 0%,rgba(37,211,102,.45) 100%)">
+        <div class="hs-bg" style="background-image:url('images/blog1.jpg')"></div>
+        <div class="hs-overlay"></div>
+      </div>
+      <div class="hs-slide" data-index="2" style="--overlay:linear-gradient(135deg,rgba(60,10,80,.88) 0%,rgba(168,85,247,.5) 100%)">
+        <div class="hs-bg" style="background-image:url('images/blog2.jpg')"></div>
+        <div class="hs-overlay"></div>
+      </div>
+      <div class="hs-slide" data-index="3" style="--overlay:linear-gradient(135deg,rgba(80,20,10,.88) 0%,rgba(239,68,68,.5) 100%)">
+        <div class="hs-bg" style="background-image:url('images/blog3.jpg')"></div>
+        <div class="hs-overlay"></div>
+      </div>
+      <div class="hs-slide" data-index="4" style="--overlay:linear-gradient(135deg,rgba(10,40,70,.88) 0%,rgba(59,130,246,.55) 100%)">
+        <div class="hs-bg" style="background-image:url('images/hero-bg.jpg');background-position:60% center;"></div>
+        <div class="hs-overlay"></div>
+      </div>
+      <div class="hs-slide" data-index="5" style="--overlay:linear-gradient(135deg,rgba(5,25,50,.9) 0%,rgba(14,165,233,.6) 100%)">
+        <div class="hs-bg" style="background-image:url('images/blog1.jpg');background-position:30% center;"></div>
+        <div class="hs-overlay"></div>
+      </div>
+      <div class="hs-slide" data-index="6" style="--overlay:linear-gradient(135deg,rgba(30,10,60,.88) 0%,rgba(99,102,241,.55) 100%)">
+        <div class="hs-bg" style="background-image:url('images/blog2.jpg');background-position:top center;"></div>
+        <div class="hs-overlay"></div>
+      </div>
+      <div class="hs-slide" data-index="7" style="--overlay:linear-gradient(135deg,rgba(10,60,40,.88) 0%,rgba(16,185,129,.55) 100%)">
+        <div class="hs-bg" style="background-image:url('images/blog3.jpg');background-position:bottom center;"></div>
+        <div class="hs-overlay"></div>
+      </div>
+      <div class="hs-slide" data-index="8" style="--overlay:linear-gradient(135deg,rgba(60,30,5,.88) 0%,rgba(245,158,11,.5) 100%)">
+        <div class="hs-bg" style="background-image:url('images/hero-bg.jpg');background-position:right center;"></div>
+        <div class="hs-overlay"></div>
+      </div>
+      <div class="hs-slide" data-index="9" style="--overlay:linear-gradient(135deg,rgba(10,10,60,.9) 0%,rgba(139,92,246,.55) 100%)">
+        <div class="hs-bg" style="background-image:url('images/blog1.jpg');background-position:left center;"></div>
+        <div class="hs-overlay"></div>
+      </div>
+    </div>
+
+    <!-- Slide Content -->
+    <div class="container hs-content-wrap">
+      <div class="hs-text" id="hs-text">
+
+        <!-- Slide 0 (default visible) -->
+        <div class="hs-text-slide active" data-index="0">
+          <div class="hero-badge"><span>🌍 Sri Lanka's #1 European Study Abroad Specialists</span></div>
+          <h1 class="hero-title">Study in <span class="text-gradient">Germany & Europe</span><br>from Sri Lanka</h1>
+          <p class="hero-subtitle">Affordable education, expert visa guidance, and complete support — from application to arrival. Trusted by 150+ successful students.</p>
+        </div>
+
+        <!-- Slide 1 -->
+        <div class="hs-text-slide" data-index="1">
+          <div class="hero-badge"><span>🇩🇪 Zero Tuition Fees at Top German Universities</span></div>
+          <h1 class="hero-title">Study in <span class="text-gradient-green">Germany</span><br>Tuition-Free</h1>
+          <p class="hero-subtitle">Public German universities charge near-zero tuition. Earn a world-class degree and stay 18 months on a job seeker visa. We handle everything.</p>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hs-text-slide" data-index="2">
+          <div class="hero-badge"><span>🇬🇧 UK Student Visa — Fast & Reliable</span></div>
+          <h1 class="hero-title">Study in <span class="text-gradient-purple">UK</span><br>in 1-Year Master's</h1>
+          <p class="hero-subtitle">Save a full year with 1-year UK Master's programs. 2-year Graduate Route Visa. Oxford, Cambridge, Manchester — we get you in.</p>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hs-text-slide" data-index="3">
+          <div class="hero-badge"><span>🇮🇹 DSU Scholarships up to €6,000 for Sri Lankans</span></div>
+          <h1 class="hero-title">Study in <span class="text-gradient-red">Italy</span><br>with Scholarships</h1>
+          <p class="hero-subtitle">Italy's DSU grants cover tuition, accommodation & a monthly stipend. Most Sri Lankan families qualify. We've placed 30+ students already.</p>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="hs-text-slide" data-index="4">
+          <div class="hero-badge"><span>🎯 98% Visa Approval Rate — 150+ Students Placed</span></div>
+          <h1 class="hero-title">Start Your <span class="text-gradient">European Dream</span><br>from Jaffna</h1>
+          <p class="hero-subtitle">Based in Chavakacheri, Jaffna — Navixa Education is Northern Sri Lanka's most trusted study abroad consultancy. Real results, zero false promises.</p>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="hs-text-slide" data-index="5">
+          <div class="hero-badge"><span>🛂 Complete Visa Guidance — Embassy Ready</span></div>
+          <h1 class="hero-title">Student Visa<br><span class="text-gradient">Approved.</span> Every Time.</h1>
+          <p class="hero-subtitle">Our 98% visa success rate comes from meticulous document preparation, financial planning, and mock embassy interview sessions for every student.</p>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="hs-text-slide" data-index="6">
+          <div class="hero-badge"><span>🏆 End-to-End Support — University to Arrival</span></div>
+          <h1 class="hero-title">From Application<br>to <span class="text-gradient-purple">Arrival in Europe</span></h1>
+          <p class="hero-subtitle">We handle everything — university selection, SOP writing, visa documents, blocked account, accommodation, and pre-departure orientation. Full package.</p>
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="hs-text-slide" data-index="7">
+          <div class="hero-badge"><span>🇳🇴 Free Education in Norway & Scandinavia</span></div>
+          <h1 class="hero-title">Study in <span class="text-gradient-green">Norway</span><br>Absolutely Free</h1>
+          <p class="hero-subtitle">Norwegian public universities charge no tuition fees. High living standards, safe environment, and stunning landscapes await Sri Lankan students.</p>
+        </div>
+
+        <!-- Slide 8 -->
+        <div class="hs-text-slide" data-index="8">
+          <div class="hero-badge"><span>💬 Free Consultation — No Hidden Fees Ever</span></div>
+          <h1 class="hero-title">Get Honest<br><span class="text-gradient">Expert Advice</span> — Free</h1>
+          <p class="hero-subtitle">Book your 30-minute free consultation with our advisor. We assess your profile, explain all options honestly, and build your personalized study roadmap.</p>
+        </div>
+
+        <!-- Slide 9 -->
+        <div class="hs-text-slide" data-index="9">
+          <div class="hero-badge"><span>🌐 5 Countries • 150+ Students • 20+ Years Experience</span></div>
+          <h1 class="hero-title">Your Future<br>Starts in <span class="text-gradient-purple">Europe</span> Today</h1>
+          <p class="hero-subtitle">Germany, UK, Italy, Malta, Norway — wherever your goals take you, Navixa Education guides you there. Join 150+ Sri Lankan students who made it.</p>
+        </div>
+
+      </div><!-- /.hs-text -->
+
+      <!-- CTA Buttons (static, always visible) -->
+      <div class="hero-actions hs-actions">
         <a href="contact.html" class="btn btn-primary btn-lg" id="hero-consultation-btn">
           📅 Book Free Consultation
         </a>
@@ -80,12 +189,381 @@
           Chat on WhatsApp
         </a>
       </div>
-      <div class="hero-scroll animate-fade-up delay-4">
+
+      <!-- Slide Counter + Dots -->
+      <div class="hs-nav">
+        <span class="hs-counter" id="hs-counter" aria-live="polite">01 / 10</span>
+        <div class="hs-dots" id="hs-dots" role="tablist" aria-label="Slide navigation">
+          <button class="hs-dot active" data-dot="0" role="tab" aria-label="Slide 1" aria-selected="true"></button>
+          <button class="hs-dot" data-dot="1" role="tab" aria-label="Slide 2" aria-selected="false"></button>
+          <button class="hs-dot" data-dot="2" role="tab" aria-label="Slide 3" aria-selected="false"></button>
+          <button class="hs-dot" data-dot="3" role="tab" aria-label="Slide 4" aria-selected="false"></button>
+          <button class="hs-dot" data-dot="4" role="tab" aria-label="Slide 5" aria-selected="false"></button>
+          <button class="hs-dot" data-dot="5" role="tab" aria-label="Slide 6" aria-selected="false"></button>
+          <button class="hs-dot" data-dot="6" role="tab" aria-label="Slide 7" aria-selected="false"></button>
+          <button class="hs-dot" data-dot="7" role="tab" aria-label="Slide 8" aria-selected="false"></button>
+          <button class="hs-dot" data-dot="8" role="tab" aria-label="Slide 9" aria-selected="false"></button>
+          <button class="hs-dot" data-dot="9" role="tab" aria-label="Slide 10" aria-selected="false"></button>
+        </div>
+        <!-- Progress bar -->
+        <div class="hs-progress"><div class="hs-progress-bar" id="hs-progress-bar"></div></div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="hero-scroll">
         <span>Scroll to explore</span>
         <div class="scroll-indicator"></div>
       </div>
-    </div>
+
+    </div><!-- /.container -->
+
+    <!-- Prev / Next Arrows -->
+    <button class="hs-arrow hs-prev" id="hs-prev" aria-label="Previous slide">&#8249;</button>
+    <button class="hs-arrow hs-next" id="hs-next" aria-label="Next slide">&#8250;</button>
+
   </section>
+
+  <!-- ===== HERO SLIDER STYLES ===== -->
+  <style>
+  /* ── Gradient text variants ── */
+  .text-gradient-green {
+    background: linear-gradient(135deg,#22c55e,#4ade80);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .text-gradient-purple {
+    background: linear-gradient(135deg,#a855f7,#818cf8);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .text-gradient-red {
+    background: linear-gradient(135deg,#f43f5e,#fb923c);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+
+  /* ── Slider shell ── */
+  .hero-slider {
+    position: relative;
+    min-height: 100svh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* ── Background slides ── */
+  .hs-slides { position: absolute; inset: 0; z-index: 0; }
+  .hs-slide {
+    position: absolute; inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  .hs-slide.active { opacity: 1; }
+  .hs-bg {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.08);
+    transition: transform 10s ease;
+    will-change: transform;
+  }
+  .hs-slide.active .hs-bg { transform: scale(1); } /* Ken Burns zoom out */
+  .hs-overlay {
+    position: absolute; inset: 0;
+    background: var(--overlay, linear-gradient(135deg,rgba(10,25,70,.88),rgba(14,165,233,.55)));
+  }
+
+  /* ── Content wrapper ── */
+  .hs-content-wrap {
+    position: relative; z-index: 2;
+    padding-top: calc(var(--header-height, 72px) + 4rem);
+    padding-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 820px;
+  }
+
+  /* ── Text slides ── */
+  .hs-text { position: relative; width: 100%; }
+  .hs-text-slide {
+    position: absolute; top: 0; left: 0; width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    pointer-events: none;
+    /* prevent layout collapse */
+    visibility: hidden;
+  }
+  .hs-text-slide.active {
+    position: relative;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    visibility: visible;
+  }
+  /* Reserve enough height so container doesn't jump */
+  .hs-text { min-height: 200px; }
+
+  .hs-text-slide .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255,255,255,0.14);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.28);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.01em;
+  }
+  .hs-text-slide .hero-title {
+    color: #fff;
+    font-size: clamp(2rem, 5.5vw, 4.25rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+  }
+  .hs-text-slide .hero-subtitle {
+    color: rgba(255,255,255,0.87);
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
+    line-height: 1.75;
+    max-width: 600px;
+  }
+
+  /* ── CTA Buttons ── */
+  .hs-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+
+  /* ── Navigation bar ── */
+  .hs-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .hs-counter {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    font-variant-numeric: tabular-nums;
+    min-width: 40px;
+  }
+  .hs-dots { display: flex; gap: 0.4rem; }
+  .hs-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.35);
+    border: none; cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+  .hs-dot.active {
+    background: #fff;
+    width: 24px;
+    border-radius: 4px;
+  }
+  .hs-dot:hover { background: rgba(255,255,255,0.7); }
+
+  /* Progress bar */
+  .hs-progress {
+    flex: 1;
+    height: 2px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px;
+    min-width: 80px;
+    max-width: 200px;
+    overflow: hidden;
+  }
+  .hs-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg,#1a56db,#0ea5e9);
+    border-radius: 2px;
+    transition: width linear;
+  }
+
+  /* ── Arrows ── */
+  .hs-arrow {
+    position: absolute; top: 50%; z-index: 3;
+    transform: translateY(-50%);
+    width: 48px; height: 48px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.75rem;
+    line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .hs-arrow:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-50%) scale(1.08);
+  }
+  .hs-prev { left: 1.25rem; }
+  .hs-next { right: 1.25rem; }
+
+  /* ── Scroll indicator ── */
+  .hero-scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hs-content-wrap {
+      padding-top: calc(var(--header-height,60px) + 2rem);
+      padding-bottom: 5rem;
+      gap: 1.5rem;
+    }
+    .hs-text { min-height: 160px; }
+    .hs-text-slide .hero-title { font-size: clamp(1.6rem, 7vw, 2.5rem); }
+    .hs-text-slide .hero-subtitle { font-size: 0.9rem; }
+    .hs-text-slide .hero-badge { font-size: 0.7rem; padding: 0.3rem 0.75rem; }
+    .hs-actions { flex-direction: column; gap: 0.65rem; }
+    .hs-actions .btn { width: 100%; justify-content: center; }
+    .hs-arrow { width: 38px; height: 38px; font-size: 1.375rem; }
+    .hs-prev { left: 0.5rem; }
+    .hs-next { right: 0.5rem; }
+    .hs-progress { display: none; }
+    .hero-scroll { display: none; }
+  }
+  @media (max-width: 480px) {
+    .hs-content-wrap { padding-top: calc(var(--header-height,58px) + 1.5rem); }
+    .hs-text { min-height: 140px; }
+    .hs-text-slide .hero-title { font-size: clamp(1.4rem, 8vw, 2rem); line-height: 1.15; }
+    .hs-text-slide .hero-subtitle { font-size: 0.85rem; }
+    .hs-counter { display: none; }
+    .hs-arrow { display: none; }
+  }
+  </style>
+
+  <!-- ===== HERO SLIDER SCRIPT ===== -->
+  <script>
+  (function () {
+    var TOTAL = 10;
+    var DELAY = 5000; // 5 seconds
+    var current = 0;
+    var timer = null;
+    var progressTimer = null;
+    var startTime = null;
+
+    var slides     = document.querySelectorAll('.hs-slide');
+    var textSlides = document.querySelectorAll('.hs-text-slide');
+    var dots       = document.querySelectorAll('.hs-dot');
+    var counter    = document.getElementById('hs-counter');
+    var progressBar= document.getElementById('hs-progress-bar');
+    var prevBtn    = document.getElementById('hs-prev');
+    var nextBtn    = document.getElementById('hs-next');
+
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+    function goTo(index) {
+      slides[current].classList.remove('active');
+      textSlides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      dots[current].setAttribute('aria-selected', 'false');
+
+      current = ((index % TOTAL) + TOTAL) % TOTAL;
+
+      slides[current].classList.add('active');
+      textSlides[current].classList.add('active');
+      dots[current].classList.add('active');
+      dots[current].setAttribute('aria-selected', 'true');
+
+      if (counter) counter.textContent = pad(current + 1) + ' / ' + pad(TOTAL);
+
+      resetProgress();
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function resetProgress() {
+      if (progressBar) {
+        progressBar.style.transition = 'none';
+        progressBar.style.width = '0%';
+        // Force reflow
+        void progressBar.offsetWidth;
+        progressBar.style.transition = 'width ' + DELAY + 'ms linear';
+        progressBar.style.width = '100%';
+      }
+    }
+
+    function startAuto() {
+      if (timer) clearInterval(timer);
+      timer = setInterval(next, DELAY);
+      resetProgress();
+    }
+
+    function stopAuto() {
+      if (timer) clearInterval(timer);
+      timer = null;
+      if (progressBar) { progressBar.style.transition = 'none'; }
+    }
+
+    // Arrow buttons
+    if (prevBtn) prevBtn.addEventListener('click', function () { stopAuto(); prev(); startAuto(); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { stopAuto(); next(); startAuto(); });
+
+    // Dot buttons
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        var idx = parseInt(dot.getAttribute('data-dot'));
+        stopAuto(); goTo(idx); startAuto();
+      });
+    });
+
+    // Touch/swipe support
+    var touchStartX = 0;
+    var heroEl = document.querySelector('.hero-slider');
+    if (heroEl) {
+      heroEl.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+      heroEl.addEventListener('touchend', function (e) {
+        var diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 40) {
+          stopAuto();
+          if (diff > 0) next(); else prev();
+          startAuto();
+        }
+      }, { passive: true });
+    }
+
+    // Pause on hover (desktop)
+    if (heroEl) {
+      heroEl.addEventListener('mouseenter', stopAuto);
+      heroEl.addEventListener('mouseleave', startAuto);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { stopAuto(); prev(); startAuto(); }
+      if (e.key === 'ArrowRight') { stopAuto(); next(); startAuto(); }
+    });
+
+    // Init
+    goTo(0);
+    startAuto();
+  })();
+  </script>
 
   <!-- ===== TRUST BAR ===== -->
   <section class="trust-bar" aria-label="Trust indicators">
