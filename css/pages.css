@@ -1,0 +1,226 @@
+/* ============================================================
+   NAVIXA EDUCATION — Page-Specific Styles
+   Additional styles for inner pages
+   ============================================================ */
+
+/* ———— Study in Germany ———— */
+.requirements-section { background: var(--gray-50); }
+.requirements-intro { max-width: 700px; margin: 0 auto var(--space-10); text-align: center; }
+.requirements-intro p { color: var(--gray-500); font-size: var(--text-lg); }
+
+.visa-steps { counter-reset: step-counter; display: flex; flex-direction: column; gap: var(--space-6); }
+.visa-step {
+  counter-increment: step-counter;
+  display: flex;
+  gap: var(--space-6);
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6) var(--space-8);
+  align-items: flex-start;
+  transition: var(--transition);
+}
+.visa-step:hover { border-color: var(--primary); box-shadow: var(--shadow); }
+.visa-step-number {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: var(--gradient-primary);
+  color: var(--white);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-lg);
+  font-weight: 800;
+}
+.visa-step-content h3 { color: var(--gray-900); margin-bottom: var(--space-2); }
+.visa-step-content p { color: var(--gray-500); font-size: var(--text-sm); line-height: 1.7; }
+
+/* ———— Services Page ———— */
+.service-detail {
+  padding: var(--space-16) 0;
+  border-bottom: var(--border);
+}
+.service-detail:last-child { border-bottom: none; }
+.service-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center; }
+.service-detail-grid.reverse { direction: rtl; }
+.service-detail-grid.reverse > * { direction: ltr; }
+.service-detail-icon { font-size: 4rem; margin-bottom: var(--space-4); }
+.service-detail h2 { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--gray-900); margin-bottom: var(--space-4); }
+.service-detail p { color: var(--gray-600); line-height: 1.8; margin-bottom: var(--space-5); }
+.service-feature-list { display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-6); }
+.service-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--gray-700);
+}
+.service-feature-item::before {
+  content: '✅';
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+.service-image-placeholder {
+  background: var(--gradient-light);
+  border-radius: var(--radius-2xl);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+/* ———— Blog ———— */
+.blog-hero { background: var(--gradient-primary); }
+.blog-main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+.blog-sidebar { display: flex; flex-direction: column; gap: var(--space-6); }
+.sidebar-widget {
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+}
+.sidebar-widget h4 {
+  font-size: var(--text-base);
+  color: var(--gray-900);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--border);
+}
+.sidebar-category { display: flex; flex-direction: column; gap: var(--space-2); }
+.sidebar-category a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+  transition: var(--transition);
+}
+.sidebar-category a:hover { background: var(--primary-glow); color: var(--primary); }
+.sidebar-category .cat-count {
+  background: var(--gray-100);
+  color: var(--gray-500);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+}
+.blog-article-full {
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+}
+.blog-article-full .blog-image { aspect-ratio: 16/9; }
+.blog-article-full .blog-image img { width: 100%; height: 100%; object-fit: cover; }
+.article-body {
+  padding: var(--space-8);
+}
+.article-body h1 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); color: var(--gray-900); margin-bottom: var(--space-3); }
+.article-meta { display: flex; gap: var(--space-4); flex-wrap: wrap; margin-bottom: var(--space-6); padding-bottom: var(--space-5); border-bottom: var(--border); }
+.article-meta span { color: var(--gray-400); font-size: var(--text-xs); }
+.article-content h2 { font-size: var(--text-2xl); color: var(--gray-900); margin: var(--space-8) 0 var(--space-4); }
+.article-content h3 { font-size: var(--text-xl); color: var(--gray-800); margin: var(--space-6) 0 var(--space-3); }
+.article-content p { color: var(--gray-600); line-height: 1.9; margin-bottom: var(--space-5); font-size: var(--text-base); }
+.article-content ul { list-style: disc; padding-left: var(--space-6); margin-bottom: var(--space-5); }
+.article-content ul li { color: var(--gray-600); margin-bottom: var(--space-2); font-size: var(--text-sm); line-height: 1.7; }
+.article-content strong { color: var(--gray-800); }
+.article-info-box {
+  background: var(--primary-glow);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: var(--space-5);
+  margin: var(--space-6) 0;
+}
+.article-info-box p { margin: 0; color: var(--primary-dark); font-size: var(--text-sm); }
+
+/* ———— About Page ———— */
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+.team-card {
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  text-align: center;
+  transition: var(--transition);
+}
+.team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+.team-avatar {
+  width: 80px; height: 80px;
+  border-radius: var(--radius-full);
+  margin: 0 auto var(--space-4);
+  background: var(--gradient-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  border: 3px solid var(--primary-light);
+  overflow: hidden;
+}
+.team-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.team-name { font-size: var(--text-lg); color: var(--gray-900); margin-bottom: 4px; }
+.team-role { color: var(--primary); font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-3); }
+.team-bio { color: var(--gray-500); font-size: var(--text-sm); line-height: 1.6; }
+
+/* Vision/Mission */
+.vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); }
+.vm-card {
+  padding: var(--space-8);
+  border-radius: var(--radius-2xl);
+  border: var(--border);
+}
+.vm-card.vision { background: var(--gradient-primary); border-color: transparent; }
+.vm-card.mission { background: var(--gray-50); }
+.vm-card h3 { font-size: var(--text-2xl); margin-bottom: var(--space-3); }
+.vm-card.vision h3 { color: var(--white); }
+.vm-card.mission h3 { color: var(--gray-900); }
+.vm-card p { line-height: 1.8; font-size: var(--text-base); }
+.vm-card.vision p { color: rgba(255,255,255,0.85); }
+.vm-card.mission p { color: var(--gray-600); }
+.vm-icon { font-size: 2.5rem; margin-bottom: var(--space-4); }
+
+/* ———— Contact Page ———— */
+.contact-map {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: var(--border);
+  height: 300px;
+  background: var(--gradient-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--primary);
+}
+.contact-map-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+.contact-map-placeholder p { font-weight: 600; color: var(--primary); font-size: var(--text-base); }
+.contact-map-placeholder span { color: var(--gray-500); font-size: var(--text-sm); }
+
+/* ———— Responsive inner pages ———— */
+@media (max-width: 768px) {
+  .service-detail-grid { grid-template-columns: 1fr; }
+  .service-detail-grid.reverse { direction: ltr; }
+  .blog-main-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .vm-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .cost-grid { grid-template-columns: 1fr; }
+}
